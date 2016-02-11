@@ -10,8 +10,8 @@ var paths = {
 };
 
 gulp.task('sass', function(){
-	var srcGlob = paths.srcDir + '/scss/*.scss';
-	var destGlob = paths.destDir + '/css';
+	var srcGlob = paths.srcDir + '/assets/scss/*.scss';
+	var destGlob = paths.destDir + '/assets/css';
 
 	gulp.src(srcGlob)
 		.pipe(plumber({

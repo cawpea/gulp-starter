@@ -38,8 +38,8 @@ gulp.task('del', ['copy:tmp'], function () {
 		.pipe( vinylPaths( del ) );
 });
 
-gulp.task('watch', ['sass', 'copy'], function () {
-	var scssGlob = paths.srcDir + '/scss/*.scss';
+gulp.task('watch', ['sass', 'copy', 'imagemin'], function () {
+	var scssGlob = paths.srcDir + '/**/*.scss';
 	var htmlGlob = paths.srcDir + '/*.html';
 
 	var watchers = [];
