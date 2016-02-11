@@ -7,7 +7,8 @@ var paths = {
 	destDir: 'prod'
 };
 
-gulp.task('imagemin', function () {
+gulp.task('imageoptim', ['imagemin']);
+gulp.task('imagemin', ['responsive'], function () {
 	var srcGlob = paths.srcDir + '/**/*.+(jpg|jpeg|png|gif|svg)';
 	var destGlob = paths.destDir;
 	var imageminOptions = {
