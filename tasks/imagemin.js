@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
+var changed = require('gulp-changed');
 
 var paths = {
 	srcDir: 'src',
@@ -14,6 +15,7 @@ gulp.task('imagemin', function () {
 	};
 
 	gulp.src( srcGlob )
+		.pipe(changed( destGlob ))
 		.pipe(imagemin( imageminOptions ))
 		.pipe(gulp.dest( destGlob ));
 });
