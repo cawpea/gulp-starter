@@ -2,10 +2,10 @@ var path = require('path');
 var gulp = require('gulp');
 var del = require('del');
 var vinylPaths = require('vinyl-paths');
-
+var vinylSource = require('vinyl-source-stream');
+var browserify = require('browserify');
 var requireDir = require('require-dir');
 var dir = requireDir('./tasks', {recurse: true});
-
 var wait = require('gulp-wait');
 var webserver = require('gulp-webserver');
 
@@ -53,4 +53,13 @@ gulp.task('watch', ['sass', 'copy', 'imagemin'], function () {
 	});
 });
 
-gulp.task('default', ['watch', 'browser-sync']);
+gulp.task('buildjs', function () {
+	browserify({
+		entries: [ paths.srcDir + '/assets/js/partial.js']
+	})
+	.bundle()
+	.pipe( vinylSource( 'bundle.js' ) )
+	.pipe( gulp.dest( paths.destDir + '/assets/js') );
+});
+
+gulp.task('default', ['buildjs', 'watch', 'browser-sync']);
