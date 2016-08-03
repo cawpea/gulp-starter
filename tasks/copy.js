@@ -1,5 +1,8 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
+// var del = require('del');
+// var wait = require('gulp-wait');
+// var vinylPaths = require('vinyl-paths');
 
 var paths = {
 	srcDir: 'src',
@@ -14,3 +17,20 @@ gulp.task('copy', function () {
 		.pipe(gulp.dest(destGlob))
 		.pipe(browserSync.reload({stream: true}));
 });
+
+// gulp.task('copy:tmp', function () {
+// 	var srcGlob = paths.destDir + '/**/*';
+// 	var destGlob = 'tmp';
+
+// 	return gulp.src( srcGlob )
+// 		.pipe( gulp.dest( destGlob ) );
+// });
+
+// gulp.task('del', ['copy:tmp'], function () {
+// 	var srcGlob = 'tmp';
+// 	var delay = 5000;
+
+// 	gulp.src( srcGlob )
+// 		.pipe( wait( delay ) )
+// 		.pipe( vinylPaths( del ) );
+// });
