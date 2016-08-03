@@ -1,15 +1,11 @@
+var conf = require('../gulpconf');
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var changed = require('gulp-changed');
 
-var paths = {
-	srcDir: 'src',
-	destDir: 'prod'
-};
-
 gulp.task('imagemin', function () {
-	var srcGlob = paths.srcDir + '/**/*.+(jpg|jpeg|png|gif|svg)';
-	var destGlob = paths.destDir;
+	var srcGlob = conf.paths.srcDir + '/**/*.+(jpg|jpeg|png|gif|svg)';
+	var destGlob = conf.paths.destDir;
 	var imageminOptions = {
 		optimizationLevel: 7
 	};

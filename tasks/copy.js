@@ -1,17 +1,13 @@
+var conf = require('../gulpconf');
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 // var del = require('del');
 // var wait = require('gulp-wait');
 // var vinylPaths = require('vinyl-paths');
 
-var paths = {
-	srcDir: 'src',
-	destDir: 'prod'
-};
-
 gulp.task('copy', function () {
-	var htmlGlob = paths.srcDir + '/*.html';
-	var destGlob = paths.destDir;
+	var htmlGlob = conf.paths.srcDir + '/*.html';
+	var destGlob = conf.paths.destDir;
 
 	gulp.src(htmlGlob)
 		.pipe(gulp.dest(destGlob))

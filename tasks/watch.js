@@ -1,13 +1,9 @@
+var conf = require('../gulpconf');
 var gulp = require('gulp');
 
-var paths = {
-	srcDir: 'src',
-	destDir: 'prod'
-};
-
 gulp.task('watch', ['sass', 'copy', 'imagemin'], function () {
-	var scssGlob = paths.srcDir + '/**/*.scss';
-	var htmlGlob = paths.srcDir + '/*.html';
+	var scssGlob = conf.paths.srcDir + '/**/*.scss';
+	var htmlGlob = conf.paths.srcDir + '/*.html';
 
 	var watchers = [];
 	watchers.push( gulp.watch(scssGlob, ['sass']) );
