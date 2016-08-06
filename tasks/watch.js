@@ -1,7 +1,7 @@
 var conf = require('../gulpconf');
 var gulp = require('gulp');
 
-gulp.task('watch', ['sass', 'copy', 'imagemin', 'css-min'], function () {
+gulp.task('watch', ['sass', 'copy', 'image-min', 'css-min'], function () {
 	var scssGlob = conf.paths.srcDir + '/**/*.scss';
 	var htmlGlob = conf.paths.srcDir + '/*.html';
 

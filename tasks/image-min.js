@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var changed = require('gulp-changed');
 
-gulp.task('imagemin', function () {
+gulp.task('image-min', function () {
 	var srcGlob = conf.paths.srcDir + '/**/*.+(jpg|jpeg|png|gif|svg)';
 	var destGlob = conf.paths.destDir;
 	var imageminOptions = {
