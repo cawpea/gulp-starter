@@ -6,10 +6,13 @@ var browserSync = require('browser-sync');
 // var vinylPaths = require('vinyl-paths');
 
 gulp.task('copy', function () {
-	var htmlGlob = conf.paths.srcDir + '/*.html';
+	var srcGlob = [
+		conf.paths.srcDir + '/*.html',
+		conf.paths.srcDir + '/**/*.js'
+	];
 	var destGlob = conf.paths.destDir;
 
-	gulp.src(htmlGlob)
+	gulp.src(srcGlob)
 		.pipe(gulp.dest(destGlob))
 		.pipe(browserSync.reload({stream: true}));
 });
