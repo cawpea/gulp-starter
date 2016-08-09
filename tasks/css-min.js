@@ -3,7 +3,7 @@ const gulp = require('gulp');
 const cleanCss = require('gulp-clean-css');
 const rename = require('gulp-rename');
 
-gulp.task('css-min', () => {
+gulp.task('css-min', ['sass'], () => {
 	var cssGlob = [
 		`${conf.paths.destDir}/**/*.css`,
 		`!${conf.paths.destDir}/**/*.min.css`

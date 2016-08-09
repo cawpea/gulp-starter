@@ -1,2 +1,8 @@
 a {
-  color: blue; }
+  color: red;
+  border: 1px solid red;
+  padding: 10px;
+  transition: 200ms ease-out transform;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0); }
