@@ -1,8 +1,8 @@
-var conf = require('../gulpconf');
-var gulp = require('gulp');
-var webserver = require('gulp-webserver');
+import conf from '../gulpconf';
+import gulp from 'gulp';
+import webserver from 'gulp-webserver';
 
-gulp.task('serve', function () {
+gulp.task('serve', () => {
 	gulp.src( conf.paths.destDir )
 		.pipe(webserver({
 			livereload: true

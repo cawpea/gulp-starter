@@ -1,5 +1,5 @@
-var conf = require('../gulpconf');
-var gulp = require('gulp');
+import conf from '../gulpconf';
+import gulp from 'gulp';
 
 gulp.task('watch', [
 		'sass',
@@ -9,7 +9,7 @@ gulp.task('watch', [
 		'js-min',
 		'css-normalize'
 	],
-	function () {
+	() => {
 	var scssGlob = conf.paths.srcDir + '/**/*.scss';
 	var htmlGlob = conf.paths.srcDir + '/**/*.html';
 	var jsGlob = conf.paths.srcDir + '/**/*.js';
@@ -19,8 +19,8 @@ gulp.task('watch', [
 	watchers.push( gulp.watch(jsGlob, ['js-min']) );
 	watchers.push( gulp.watch(scssGlob, ['css-normalize']) );
 
-	watchers.forEach(function ( watch, index ) {
-		watch.on('change', function (event) {
+	watchers.forEach( ( watch, index ) => {
+		watch.on('change', (event) => {
 			console.log('WATCH: ' + event.path + ' was ' + event.type);
 		});
 	});

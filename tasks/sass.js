@@ -1,10 +1,10 @@
-var conf = require('../gulpconf');
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var plumber = require('gulp-plumber');
-var notify = require('gulp-notify');
-var cache = require('gulp-cached');
-var browserSync = require('browser-sync');
+import conf from '../gulpconf';
+import gulp from 'gulp';
+import sass from 'gulp-sass';
+import plumber from 'gulp-plumber';
+import notify from 'gulp-notify';
+import cache from 'gulp-cached';
+import browserSync from 'browser-sync';
 
 gulp.task('sass', function(){
 	var srcGlob = conf.paths.srcDir + '/assets/scss/*.scss';

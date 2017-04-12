@@ -1,5 +1,6 @@
 const conf = require('../gulpconf');
 const gulp = require('gulp');
+const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
@@ -16,6 +17,7 @@ gulp.task('js-min', ['copy'], () => {
 		.pipe( plumber({
 			errorHandler: notify.onError('Error: <%= error.message %>')
 		}) )
+		.pipe( babel() )
 		.pipe( sourcemaps.init() )
 		.pipe( uglify({
 			preserveComments: 'some' // ! から始まるコメントを残すオプションを追加
