@@ -1,13 +1,12 @@
-const conf = require('../gulpconf');
-const gulp = require('gulp');
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
-const plumber = require('gulp-plumber');
-const rename = require('gulp-rename');
-const notify = require('gulp-notify');
-const sourcemaps = require('gulp-sourcemaps');
+import conf from '../gulpconf';
+import gulp from 'gulp';
+import uglify from 'gulp-uglify';
+import plumber from 'gulp-plumber';
+import rename from 'gulp-rename';
+import notify from 'gulp-notify';
+import sourcemaps from 'gulp-sourcemaps';
 
-gulp.task('js-min', ['copy'], () => {
+gulp.task('js-min', ['js-normalize'], () => {
 	var srcGlob = [
 		`${conf.paths.destDir}/**/*.js`,
 		`!${conf.paths.destDir}/**/*.min.js`
@@ -17,7 +16,6 @@ gulp.task('js-min', ['copy'], () => {
 		.pipe( plumber({
 			errorHandler: notify.onError('Error: <%= error.message %>')
 		}) )
-		.pipe( babel() )
 		.pipe( sourcemaps.init() )
 		.pipe( uglify({
 			preserveComments: 'some' // ! から始まるコメントを残すオプションを追加

@@ -10,12 +10,12 @@ gulp.task('sass', function(){
 	var srcGlob = conf.paths.srcDir + '/assets/scss/*.scss';
 	var destGlob = conf.paths.destDir + '/assets/css';
 
-	gulp.src(srcGlob)
+	return gulp.src(srcGlob)
 		.pipe(cache( 'sass' ))
 		.pipe(plumber({
 			errorHandler: notify.onError('Error: <%= error.message %>')
 		}))
-    	.pipe(sass())
-    	.pipe(gulp.dest(destGlob))
-    	.pipe(browserSync.reload({stream: true}));
+		.pipe(sass())
+		.pipe(gulp.dest(destGlob))
+		.pipe(browserSync.reload({stream: true}));
 });
