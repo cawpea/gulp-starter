@@ -18,12 +18,9 @@
     "gulp-babel": "^6.1.2",
     "gulp-cached": "^1.1.0",
     "gulp-changed": "^1.3.0",
-<<<<<<< HEAD
     "gulp-consolidate": "^0.1.2",
     "gulp-iconfont": "^5.0.1",
-=======
     "gulp-clean-css": "^2.0.12",
->>>>>>> master
     "gulp-imagemin": "^2.4.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
