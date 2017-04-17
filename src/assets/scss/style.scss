@@ -1,5 +1,10 @@
-$link-color: blue;
+$link-color: red;
 
 a {
+	font-weight: bold;
 	color: $link-color;
+	border: 1px solid $link-color;
+	padding: 10px;
+	transition: 200ms ease-out transform;
+	transform: translate(0, 0);
 }
