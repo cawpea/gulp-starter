@@ -8,10 +8,11 @@ gulp.task('default', ['watch', 'browser-sync']);
 gulp.task('build', () => {
   runSequence(
     'copy',
+    'iconfont',
+    'image-min',
     'css-normalize',
     'css-min',
     'js-normalize',
-    'js-min',
-    'image-min'
+    'js-min'
   )
 });
