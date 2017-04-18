@@ -8,11 +8,11 @@ var browserSync = require('browser-sync');
 gulp.task('copy', function () {
 	var srcGlob = [
 		conf.paths.srcDir + '/*.html',
-		conf.paths.srcDir + '/**/*.js'
+		conf.paths.srcDir + '/**/*.js',
 	];
 	var destGlob = conf.paths.destDir;
 
-	gulp.src(srcGlob)
+	return gulp.src(srcGlob)
 		.pipe(gulp.dest(destGlob))
 		.pipe(browserSync.reload({stream: true}));
 });

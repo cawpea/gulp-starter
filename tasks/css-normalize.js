@@ -8,11 +8,11 @@ gulp.task('css-normalize', () => {
 	var destGlob = conf.paths.destDir;
 
 	return runSequence('sass', () => {
-		gulp.src( srcGlob )
+		return gulp.src( srcGlob )
 			.pipe( autoprefixer({
 				browsers: ['last 5 versions'],
 				cascade: false
 			}) )
 			.pipe( gulp.dest( destGlob ) );
-	}) 
+		}) 
 });

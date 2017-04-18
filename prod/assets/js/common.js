@@ -1,37 +1,23 @@
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 //! This is common.js
-var Sample = function () {
-	function Sample() {
-		_classCallCheck(this, Sample);
-
+class Sample {
+	constructor() {
 		this.message = 'called Sample Class';
 	}
+	call() {
+		console.log( this.message );
+	}
+}
 
-	_createClass(Sample, [{
-		key: 'call',
-		value: function call() {
-			console.log(this.message);
-		}
-	}]);
-
-	return Sample;
-}();
-
-var Common = function Common() {
+var Common = function() {
 	this.init();
 };
 Common.prototype = {
-	init: function init() {
+	init: function() {
 		console.log('init common');
 	}
 };
 
-(function () {
+(function() {
 	new Common();
 	new Sample().call();
-})();
+}());

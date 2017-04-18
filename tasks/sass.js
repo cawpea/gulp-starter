@@ -5,6 +5,7 @@ import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import cache from 'gulp-cached';
 import browserSync from 'browser-sync';
+import sassPartialsImported from 'gulp-sass-partials-imported';
 
 gulp.task('sass', function(){
 	var srcGlob = conf.paths.srcDir + '/assets/scss/*.scss';
@@ -15,6 +16,7 @@ gulp.task('sass', function(){
 		.pipe(plumber({
 			errorHandler: notify.onError('Error: <%= error.message %>')
 		}))
+		.pipe(sassPartialsImported(conf.paths.srcDir + '/assets/scss/'))
 		.pipe(sass())
 		.pipe(gulp.dest(destGlob))
 		.pipe(browserSync.reload({stream: true}));
